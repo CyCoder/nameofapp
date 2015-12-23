@@ -20,16 +20,16 @@ h1 {
 	text-align: center;
 }
 
-.page-wrap {
+.wrapper {
 	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -4em;
 }
 
-.page-wrap:after {
-	display: block;
-}
 
-.site-footer, .page-wrap:after {
-	height: 50px;
+.site-footer, .push {
+	height: 4em;
 }
 
 .site-footer {
