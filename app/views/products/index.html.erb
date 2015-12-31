@@ -1,28 +1,30 @@
 <p id="notice"><%= notice %></p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name </th>
-      <th>Description</th>
-      <th>Image url</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<h1 class="text-primary">Our Bikes</h1>
 
-  <tbody>
-    <% @products.each do |product| %>
-      <tr>
-        <td><%= product.name %></td>
-        <td><%= product.description %></td>
-        <td><%= product.image_url %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="container-fluid">
+  <% @products.each do |product| %>
+  <div class="row">
+    <div class="col-xs-6 col-ms-4">
+      <img src=<%= product.image_url %> class="img-responsive">
+      <h2><%= product.name %></h2>
+      <p><%= product.description %></p>
+    </div>
+  </div> <!-- end row -->
+  <div class="row">
+    <button class="btn btn-info">
+      <%= link_to 'Show', product %>
+    </button>
+    <button class="btn btn-info">
+      <%= link_to 'Edit', edit_product_path(product) %>
+    </button>
+    <button class="btn btn-info">
+      <%= link_to 'Destroy', product, method: :delete, data: {
+        confirm: 'Are you sure?' } %>
+    </button>
+  </div><!-- end row -->
+  <% end %>
+</div> <!-- end container-fluid -->
 
 <br>
 
