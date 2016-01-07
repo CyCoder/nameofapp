@@ -11,6 +11,8 @@ html, body {
 }
 
 body {
+	width: 80%;
+	margin: 0 auto;
 	padding-top: 50px;
 }
 
@@ -35,4 +37,21 @@ h1 {
 .site-footer {
 	color: white;
 	background: blue;
+}
+
+.carousel-caption {
+	color: black;
+}
+
+.carousel-indicators {
+	background: black;
+}
+
+.image {
+	width: 50%;
+	height: 30%;
+}
+
+.btn {
+	color: black;
 }
