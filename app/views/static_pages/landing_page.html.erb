@@ -14,7 +14,8 @@
       <div class="item<%= " active" if product == @products.first %>">
         <%= image_tag(product.image_url, class: "image") %>
         <div class="carousel-caption">
-          <%= product.name %>
+          <h2><%= product.name %></h2>
+          <p><%= product.description %></p>
         </div>
       </div>
       <% end %>
@@ -30,4 +31,5 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
+  <button class="btn-lg btn-danger"><a href="/static_pages/index">Enter Site</a></button>
 </div>

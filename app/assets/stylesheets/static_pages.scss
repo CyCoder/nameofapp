@@ -40,7 +40,11 @@ h1 {
 }
 
 .carousel-caption {
+	position: relative;
+	bottom: 130px;
+	left: 25%;
 	color: black;
+	font-size: 2em;
 }
 
 .carousel-indicators {
