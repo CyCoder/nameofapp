@@ -4,9 +4,11 @@
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
+      <% num = 0 %>
       <% @products.each do |product| %>
-        <li data-target="#myCarousel" data-slide-to="<%= product %>" class="<%= " active" if product == @products.first %>">
+        <li data-target="#myCarousel" data-slide-to="<%= num %>" class="<%= " active" if product == @products.first %>">
         </li>
+        <% num = num + 1 %>
       <% end %>
     </ol>
 
