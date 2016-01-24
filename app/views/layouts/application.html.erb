@@ -23,20 +23,20 @@
             <span class="icon-bar"></span>
           </button>
           <div class="projectName navbar-brand">
-            <a href="/static_pages/index">Bike Berlin</a>
+            <%= link_to "Bike Berlin", "/static_pages/index" %>
           </div> <!-- end projectName -->
         </div> <!-- end navbar header -->
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="/static_pages/about">About</a></li>
+            <li><%= link_to "About Us", "/static_pages/about" %></li>
             <li class="dropdown">
               <a href="/products" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Bikes <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="/products">Regular Bikes</a></li>
-                <li><a href="#">Motor Bikes</a></li>
+                <li><%= link_to "Regular Bikes", "/products" %></li>
+                <li><a href="#">Motor Bikes(Coming Soon)</a></li>
               </ul>
             </li>
-            <li><a href="/static_pages/contact">Contact</a></li>
+            <li><%= link_to "Contact Us", "/static_pages/contact" %></li>
           </ul>
         </div> <!-- end navbar collapse -->
       </div> <!-- end nav container -->
