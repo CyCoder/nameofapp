@@ -1,18 +1,17 @@
-
-        <div class="col xs-6 col-md-4">
-          <%= image_tag(product.image_url, class: "img-responsive") %>
-          <h2><%= product.name %></h2>
-          <p><%= product.description %></p>
-          <p>Color: <%= product.color %></p>
-          <p>Price: <%= product.price %></p>
-          <button class="btn btn-primary">
-            <%= link_to 'Show', product %>
-          </button>
-          <button class="btn btn-info">
-            <%= link_to 'Edit', edit_product_path(product) %>
-          </button>
-          <button class="btn btn-danger">
-            <%= link_to 'Destroy', product, method: :delete, data: {
+<div class="col xs-6 col-md-4">
+  <%= image_tag(product.image_url, class: "img-responsive") %>
+  <h2><%= product.name %></h2>
+  <p><%= product.description %></p>
+  <p>Color: <%= product.color %></p>
+  <p>Price: <%= product.price %></p>
+  <button class="btn btn-primary">
+    <%= link_to 'Show', product %>
+  </button>
+  <button class="btn btn-info">
+    <%= link_to 'Edit', edit_product_path(product) %>
+  </button>
+  <button class="btn btn-danger">
+    <%= link_to 'Destroy', product, method: :delete, data: {
                 confirm: 'Are you sure?' } %>
-          </button>
-      </div>
+  </button>
+</div>
