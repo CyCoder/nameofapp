@@ -31,7 +31,7 @@
             <li id="search">
               <%= form_tag("/products", method: "get", class: "navbar-form form-control") do %>
                 <%= label_tag(:q, "Search for:", class: "navbar-text") %>
-                <%= text_field_tag(:q, nil, placeholder: "Search for your bike here") %>
+                <%= text_field_tag(:q, nil, placeholder: "Find your bike here") %>
                 <%= submit_tag("Search", class: "btn btn-primary navbar-btn") %>
               <% end %>
             </li>

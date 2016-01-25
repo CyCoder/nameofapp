@@ -1,5 +1,29 @@
-<a href="/static_pages/index">Go back to Home</a>
 <h1>Contact Us</h1>
-<p>Berlin, Germany</p>
+
+<%= flash[:notice] %>
+
+<%= form_tag("/static_pages/thank_you") do %>
+<div class="row">
+  <div class="col-md-4">
+    <div class="form-group">
+      <%= label_tag :name, "Name" %>
+      <%= text_field_tag :name, nil, class: "form-control", placeholder: "Enter Name" %>
+    </div>      
+    <div class="form-group">
+      <%= label_tag :email, "Email Address" %>
+      <%= text_field_tag :email, nil, class: "form-control", placeholder: "Enter Email" %>
+    </div>
+    <div class="form-group">
+      <%= label_tag :message, "Message" %>
+      <%= text_area_tag :message, nil, class: "form-control", placeholder: "Enter Message" %>
+    </div>      
+  </div>
+</div>
+<%= submit_tag "Send" %>   
+<% end %>
+
+<br>
+
+<h3>Berlin, Germany</h3>
 
 <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJAVkDPzdOqEcRcDteW0YgIQQ&key=AIzaSyDgGVQOqs8_17hevylOWUwf5Yzfw2SsZi0" allowfullscreen></iframe>
