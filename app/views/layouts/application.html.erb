@@ -12,8 +12,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
 
-<nav class="navbar navbar-inverse navbar-fixed-top" roles="navigation">
+  <nav class="navbar navbar-inverse navbar-fixed-top" roles="navigation">
       <div class="container-fluid">
         <div class="nav-bar header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
@@ -25,6 +27,15 @@
           <div class="projectName navbar-brand">
             <%= link_to "Bike Berlin", "/static_pages/index" %>
           </div> <!-- end projectName -->
+          <ul class="nav pull-right">
+            <li>
+            <% if user_signed_in? %>
+              <%= link_to('Sign Out', destroy_user_session_path, :method => :delete, class: "auth") %>
+            <% else %>
+                <%= link_to('Sign in', new_user_session_path, class: "auth") %>
+            <% end %>
+            </li>
+          </ul>
         </div> <!-- end navbar header -->
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">

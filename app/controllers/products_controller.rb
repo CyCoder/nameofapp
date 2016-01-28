@@ -38,7 +38,7 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to "/static_pages/index", notice: 'Sorry our server has issues right now. Product not created' }
+        format.html { redirect_to @product, notice: 'Product created successfully' }
         format.json { render :show, status: :created, location: @product }
       else
         format.html { render :new }
