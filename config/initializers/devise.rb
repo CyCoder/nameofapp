@@ -264,5 +264,4 @@ Devise.setup do |config|
   # config.omniauth_path_prefix = '/my_engine/users/auth'
   
   # The default HTTP method used to sign out a resource. Default is :delete.
-  config.sign_out_via = :get
 end
