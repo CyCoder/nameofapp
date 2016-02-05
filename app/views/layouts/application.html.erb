@@ -12,8 +12,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <% if notice %>
+    <p id="notice" class="alert alert-warning"><%= notice %></p>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  <% end %>
+  
+  <% if alert %>
+    <p class="alert alert-danger alert-dismissible" role="alert"><%= alert %></p>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  <% end %>
 
   <nav class="navbar navbar-inverse navbar-fixed-top" roles="navigation">
       <div class="container-fluid">
@@ -25,28 +36,22 @@
             <span class="icon-bar"></span>
           </button>
           <div class="projectName navbar-brand">
-            <%= link_to "Bike Berlin", "/static_pages/index" %>
+            <%= link_to "Philly's Bike Shop", "/static_pages/index" %>
           </div> <!-- end projectName -->
           <ul class="nav pull-right">
-            <li>
-            <% if user_signed_in? %>
-              <%= link_to('Logout', destroy_user_session_path, :method => :delete, class: "auth") %>
-            <% else %>
-                <%= link_to('Login', new_user_session_path, class: "auth") %>
-                <%= link_to('Sign up', new_user_registration_path, class: "auth") %>
-            <% end %>
+            <li class="auth">
+              <% if user_signed_in? %>
+                <%= link_to 'My Account', "/users" %>
+                <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+              <% else %>
+                  <%= link_to('Login', new_user_session_path) %>
+                  <%= link_to('Sign up', new_user_registration_path) %>
+              <% end %>
             </li>
           </ul>
         </div> <!-- end navbar header -->
         <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li id="search">
-              <%= form_tag("/products", method: "get", class: "navbar-form form-control") do %>
-                <%= label_tag(:q, "Search for:", class: "navbar-text") %>
-                <%= text_field_tag(:q, nil, placeholder: "Find your bike here") %>
-                <%= submit_tag("Search", class: "btn btn-primary navbar-btn") %>
-              <% end %>
-            </li>
+          <ul class="nav navbar-nav navbar-left">
             <li><%= link_to "About Us", "/static_pages/about" %></li>
             <li class="dropdown">
               <a href="/products" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Bikes <span class="caret"></span></a>
@@ -56,6 +61,13 @@
               </ul>
             </li>
             <li><%= link_to "Contact Us", "/static_pages/contact" %></li>
+            <li id="search">
+              <%= form_tag("/products", method: "get", class: "navbar-form") do %>
+                <%= label_tag(:q, "Search for:", class: "navbar-text") %>
+                <%= text_field_tag(:q, nil, placeholder: "Find your bike here") %>
+                <%= submit_tag("Search", class: "btn btn-primary navbar-btn") %>
+              <% end %>
+            </li>
           </ul>
         </div> <!-- end navbar collapse -->
       </div> <!-- end nav container -->

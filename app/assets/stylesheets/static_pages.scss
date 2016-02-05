@@ -22,14 +22,20 @@ h1 {
 	text-align: center;
 }
 
-#search {
-	position: relative;
-	top: 40px;
-	right: 15%;
+.auth {
+	padding-top: 15px;
 }
 
-nav .auth {
+.navbar {
+	min-height: 30px;
+}
+
+.navbar-inverse .navbar-nav>li>a {
 	color: white;
+}
+
+.nav>li>a {
+	display: inline-block;
 }
 
 .wrapper {
@@ -38,7 +44,6 @@ nav .auth {
 	height: 100%;
 	
 }
-
 
 .site-footer, .push {
 	height: 4em;
