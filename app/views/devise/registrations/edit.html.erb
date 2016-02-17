@@ -4,6 +4,8 @@
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= devise_error_messages! %>
 
+    <button class="btn btn-danger btn-lg"><%= link_to 'Edit My Personal Information', edit_user_path(resource_name) %></button>
+
     <div class="field">
       <%= f.label :email %><br />
       <%= f.email_field :email, autofocus: true, class: "input-lg" %>

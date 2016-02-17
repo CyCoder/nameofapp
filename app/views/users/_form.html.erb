@@ -11,23 +11,17 @@
     </div>
   <% end %>
 
+<div class="text-center">
   <div class="field">
     <%= f.label :first_name %><br>
-    <%= f.text_field :first_name %>
+    <%= f.text_field :first_name, class: "input-lg" %>
   </div>
   <div class="field">
     <%= f.label :last_name %><br>
-    <%= f.text_field :last_name %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.email_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :password %><br>
-    <%= f.password_field :password %>
+    <%= f.text_field :last_name, class: "input-lg" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Update Personal Information", class: "btn btn-success btn-lg" %>
   </div>
+</div>
 <% end %>
