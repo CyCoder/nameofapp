@@ -14,16 +14,10 @@
 <body>
   <% if notice %>
     <p id="notice" class="alert alert-warning"><%= notice %></p>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
   <% end %>
   
   <% if alert %>
     <p class="alert alert-danger alert-dismissible" role="alert"><%= alert %></p>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
   <% end %>
 
   <nav class="navbar navbar-inverse navbar-fixed-top" roles="navigation">
@@ -41,8 +35,8 @@
           <ul class="nav pull-right">
             <li class="auth">
               <% if user_signed_in? %>
-                <%= link_to 'My Account', "/users/edit" %>
-                <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+                <%= link_to 'My Account', current_user %>
+                <%= link_to('Logout', destroy_user_session_path, :method => :delete, class: "auth") %>
               <% else %>
                   <%= link_to('Login', new_user_session_path) %>
                   <%= link_to('Sign up', new_user_registration_path) %>
