@@ -23,6 +23,7 @@
           <dt>Description:</dt>
           <dd>- <%= @product.description %></dd>
         </dl>
+        <p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div></p>
       </div>
     </div><!-- end row-->
   </div><!-- end container -->
@@ -33,5 +34,6 @@
 </div>
 
 <div class="comments">
-  <h3>Other User Comments: </h3>
+  <%= render 'new_comment' %>
+  <%= render 'comments' %>
 </div>
