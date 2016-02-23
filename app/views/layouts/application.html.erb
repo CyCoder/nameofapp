@@ -35,8 +35,15 @@
           <ul class="nav pull-right">
             <li class="auth">
               <% if user_signed_in? %>
-                <%= link_to 'My Account', current_user %>
-                <%= link_to('Logout', destroy_user_session_path, :method => :delete, class: "auth") %>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><%= link_to "My Orders", "/orders" %></li>
+                    <li><%= link_to "Edit My Name", current_user %></li>
+                    <li><%= link_to "Change My Info", "/users/edit" %></li>
+                    <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+                  </ul>
+                </li>
               <% else %>
                   <%= link_to('Login', new_user_session_path) %>
                   <%= link_to('Sign up', new_user_registration_path) %>
@@ -48,7 +55,7 @@
           <ul class="nav navbar-nav navbar-left">
             <li><%= link_to "About Us", "/static_pages/about" %></li>
             <li class="dropdown">
-              <a href="/products" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Bikes <span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Bikes <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><%= link_to "Regular Bikes", "/products" %></li>
                 <li><a href="#">Motor Bikes(Coming Soon)</a></li>
@@ -73,7 +80,7 @@
 </div> <!-- end page-wrap -->
 
 <footer class="site-footer">
-	&copy; 2015 Philly's Bike Shop
+  &copy; 2015 Philly's Bike Shop
 </footer>
 
 </body>
