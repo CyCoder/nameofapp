@@ -21,3 +21,6 @@
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %>
+<% if signed_in? && current_user.admin? %>
+	<%= link_to 'Back', @user %>
+<% end %>
