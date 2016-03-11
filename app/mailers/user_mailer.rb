@@ -5,6 +5,12 @@ class UserMailer < ApplicationMailer
 		@message = message
 			mail(:from => email,
 				   :to => 'ptuan917@gmail.com',
-  		     :subject => "Bike Berlin, #{@name} sent you a message!")
+  		     :subject => "Philly's Bike Shop, #{@name} sent you a message!")
+	end
+
+	def welcome(user)
+  @appname = "Philly's Bike Shop"
+  mail( :to => user.email,
+        :subject => "Welcome to #{@appname}!")
 	end
 end
