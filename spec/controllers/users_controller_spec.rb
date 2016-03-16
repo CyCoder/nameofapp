@@ -2,8 +2,8 @@ require 'rails_helper'
 
 describe UsersController, :type => :controller do
 	before do
-		@user = User.create(email: "ptuan917@gmail.com", encrypted_password: "test1234")
-		@user2 = User.create(email: "ptuan1573@gmail.com", encrypted_password: "test1234")
+		@user = User.create!(email: "ptuan917@gmail.com", password: "test1234")
+		@user2 = User.create!(email: "ptuan1573@gmail.com", password: "test1234")
 	end
 
 	describe "GET #show" do
@@ -11,7 +11,6 @@ describe UsersController, :type => :controller do
 		context "User is logged in" do
 			before do 
 				sign_in @user
-				sign_in @user2
 			end
 
 			it "loads correct user details" do
@@ -21,13 +20,11 @@ describe UsersController, :type => :controller do
 			end
 		end
 
-		context "No user is logged in" do
-      it "redirects to login" do
+     context "No user is logged in" do
+       it "redirects to login" do
          get :show, id: @user.id
          expect(response).to redirect_to(root_path)
-      end
-		end	
-
-
+       end
+     end
 	end
 end
