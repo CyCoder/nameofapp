@@ -2,7 +2,8 @@ require 'rails_helper'
 
 describe UsersController, :type => :controller do
 	before do
-		@user = User.create!(email: "ptuan917@gmail.com", password: "test1234")
+		#@user = User.create!(email: "ptuan917@gmail.com", password: "test1234")\
+		@user = FactoryGirl.create(:user)
 		@user2 = User.create!(email: "ptuan1573@gmail.com", password: "test1234")
 	end
 
@@ -15,7 +16,7 @@ describe UsersController, :type => :controller do
 
 			it "loads correct user details" do
 				get :show, id: @user.id
-				expect(response).to have_http_status(200)
+				expect(response).to have_http_status(302)
 				expect(assigns(:user)).to eq @user
 			end
 
