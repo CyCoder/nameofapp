@@ -3,10 +3,9 @@ class ProductsController < ApplicationController
 
   # GET /products
   # GET /products.json
-  def index
+  def index   
     if params[:q]
       search_term = params[:q]
-
       if Rails.env.development?
         @products = Product.where("name LIKE ?", "%#{search_term}%")
       else
@@ -20,6 +19,7 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
+    byebug
     @comments = @product.comments.order("created_at DESC").paginate(:page => params[:page], :per_page => 5)
   end
 
