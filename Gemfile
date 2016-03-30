@@ -41,6 +41,7 @@ gem 'stripe', '~> 1.34.0'
 
 gem "brakeman", :require => false 
 gem 'angularjs-rails'
+gem 'dalli'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
