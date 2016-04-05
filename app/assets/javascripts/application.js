@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require angular
+//= require angular-resource
 //= require angular-animate
 //= require angular-resource
 //= require unstable/angular2

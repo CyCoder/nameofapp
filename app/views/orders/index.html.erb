@@ -1,5 +1,20 @@
 <h1 class="text-primary">My Orders</h1>
 <div ng-controller="OrdersCtrl">
+
+  <form class="form-inline" ng-submit="addOrder()">
+    <strong>Add order: </strong>
+
+    <input type="number" step="0.01" class="form-control" placeholder="Total" ng-model="newOrder.total">
+    <select ng-model="newOrder.product_id" class="form-control">
+		  <option value="" disabled selected>Select a product</option>
+		  <option ng-repeat="product in products" value="{{order.product.name}}">{{order.user.email}}</option>
+		</select>
+
+    <input type="submit" value="+" class="btn btn-success">
+  </form>
+
+  <table class="table table-hover">
+
   <table class="table table-hover">
 	  <thead>
 	    <td>Order ID</td>
@@ -7,18 +22,19 @@
 	    <td>Product</td>
 	    <td></td>
 	  </thead>
-	  <tr ng-repeat="order in orders">
+	  <tr ng-repeat="order in orders | orderBy:'-id':reverse">
 	  	<td>
 		    {{order.id}}
 		  </td>
 		  <td>
-		    <strong>{{order.total}}</strong>
+		    <strong>{{order.total | currency}}</strong>
 		  </td>
 		  <td>
 		    {{order.product_id}}
+		    <small ng-show="order.id"><br>-{{order.user_id}}</small>
 		  </td>
 		  <td>
-		    <!-- we will fill this later with content -->
+  			<button ng-click="deleteOrder(order)" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
 		  </td>
 	  </tr>
 	</table>
