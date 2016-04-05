@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+	skip_before_filter :verify_authenticity_token
 	def create
 		@product = Product.find(params[:product_id])
 		@comment = @product.comments.new(comment_params)
