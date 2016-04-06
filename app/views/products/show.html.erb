@@ -7,7 +7,6 @@
       </div>
     <div class="row">
       <div class="col-xs-12 col-md-6 col-lg-6">
-        <% cache @product do %>
         <p class="name details">
           <strong>Name:</strong>
           <%= @product.name %>
@@ -16,7 +15,6 @@
           <strong>Price: $</strong>
           <%= @product.price %>
         </p>
-        <% end %>
         <p class="color details">
           <strong>Color:</strong>
           <%= @product.color %>
